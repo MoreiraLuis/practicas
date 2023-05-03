@@ -11,108 +11,73 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
-        <script src=""></script>
+        <script src="js/buscador.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <table class="fixed_headers">
-            <thead>
-              <tr>
-                <th>Nombre</th>
-                <th>Curso</th>
-                <th>Asignatura</th>
-                <th>Nota</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Apple</td>
-                <td>Red</td>
-                <td>These are red.</td>
-              </tr>
-              <tr>
-                <td>Pear</td>
-                <td>Green</td>
-                <td>These are green.</td>
-              </tr>
-              <tr>
-                <td>Grape</td>
-                <td>Purple / Green</td>
-                <td>These are purple and green.</td>
-              </tr>
-              <tr>
-                <td>Orange</td>
-                <td>Orange</td>
-                <td>These are orange.</td>
-              </tr>
-              <tr>
-                <td>Banana</td>
-                <td>Yellow</td>
-                <td>These are yellow.</td>
-              </tr>
-              <tr>
-                <td>Kiwi</td>
-                <td>Green</td>
-                <td>These are green.</td>
-              </tr>
-              <tr>
-                <td>Plum</td>
-                <td>Purple</td>
-                <td>These are Purple</td>
-              </tr>
-              <tr>
-                <td>Watermelon</td>
-                <td>Red</td>
-                <td>These are red.</td>
-              </tr>
-              <tr>
-                <td>Tomato</td>
-                <td>Red</td>
-                <td>These are red.</td>
-              </tr>
-              <tr>
-                <td>Cherry</td>
-                <td>Red</td>
-                <td>These are red.</td>
-              </tr>
-              <tr>
-                <td>Cantelope</td>
-                <td>Orange</td>
-                <td>These are orange inside.</td>
-              </tr>
-              <tr>
-                <td>Honeydew</td>
-                <td>Green</td>
-                <td>These are green inside.</td>
-              </tr>
-              <tr>
-                <td>Papaya</td>
-                <td>Green</td>
-                <td>These are green.</td>
-              </tr>
-              <tr>
-                <td>Raspberry</td>
-                <td>Red</td>
-                <td>These are red.</td>
-              </tr>
-              <tr>
-                <td>Blueberry</td>
-                <td>Blue</td>
-                <td>These are blue.</td>
-              </tr>
-              <tr>
-                <td>Mango</td>
-                <td>Orange</td>
-                <td>These are orange.</td>
-              </tr>
-              <tr>
-                <td>Passion Fruit</td>
-                <td>Green</td>
-                <td>These are green.</td>
-              </tr>
-            </tbody>
-          </table>          
+        <div class="nav">
+          <input type="checkbox">
+            <span></span>
+            <span></span>
+            <div class="menu">
+              <li><a href="#">INICIO</a></li>
+              <li><a href="#">NOTAS</a></li>
+              <li><a href="#">CURSOS</a></li>
+              <li><a href="#">ÁREA PERSONAL</a></li>
+              <li><a href="#">CERRAR SESIÓN</a></li>
+            </div>
+        </div>
+        <br>
+        <br>
+        <input type="search" placeholder="Buscar . . ." id="inputBusqueda"/>
+        <!-- Busqueda -->
+        <div class="search" id="search">
+          <table class="search-tabla" id="searchTabla">
+            <thead><tr><td></td></tr></thead>
+            <tbody id="tabla"></tbody>
+          </table>
+        </div>
+
+        <h1>BASE DE DATOS DE ALUMNOS</h1>
+    <table class="rwd-table">
+      <tr>
+        <th>ALUMNO</th>
+        <th>CURSO</th>
+        <th>ASIGNATURA</th>
+        <th>NOTA</th>
+      </tr>
+      <tr>
+        <td data-th="Movie Title">María Flores</td>
+        <td data-th="Genre">WEB FULL STACK</td>
+        <td data-th="Year">JavaScript</td>
+        <td data-th="Gross">19/20</td>
+      </tr>
+      <tr>
+        <td data-th="Movie Title">José Pérez</td>
+        <td data-th="Genre">WEB FULL STACK</td>
+        <td data-th="Year">HTML</td>
+        <td data-th="Gross">13/20</td>
+      </tr>
+      <tr>
+        <td data-th="Movie Title">Gabriela García</td>
+        <td data-th="Genre">WEB FULL STACK</td>
+        <td data-th="Year">HTML, CSS</td>
+        <td data-th="Gross">11/20</td>
+      </tr>
+      <tr>
+        <td data-th="Movie Title">Marcos Díaz</td>
+        <td data-th="Genre">PYTHON</td>
+        <td data-th="Year">PYTHON 3.0</td>
+        <td data-th="Gross">18/20</td>
+      </tr>
+      <tr>
+        <td data-th="Movie Title">Jesús Alonso</td>
+        <td data-th="Genre">PROGRAMACIÓN AVANZADA</td>
+        <td data-th="Year">C, C+, C++</td>
+        <td data-th="Gross">14/20</td>
+      </tr>
+    </table>
     </body>
 </html>
