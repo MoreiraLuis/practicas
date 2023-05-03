@@ -14,3 +14,14 @@ $("#inputBusqueda").keyup(function () {
 		$("#search").fadeIn("fast");
 	}
 });
+
+// FUNCIONALIDADES USUARIO
+
+(function() {
+    $('.btn').click(function() {
+      $(this).toggleClass('active');
+      return $('.box').toggleClass('open');
+    });
+  
+  }).call(this);
+  
