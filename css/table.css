@@ -1,3 +1,8 @@
+body {
+    background-color: #cacaca;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .fixed_headers {
     width: 750px;
     table-layout: fixed;

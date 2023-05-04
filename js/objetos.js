@@ -27,7 +27,7 @@ function Luis(nombre, apellido, email, edad, contraseña, telefono, DNI, direcci
     this.nota = nota;
   }
 
-  var Asignaturas = new Asignaturas("Juan Pérez", "Matemáticas", "ESO", 15);
+  var Notas = new Notas("Juan Pérez", "Matemáticas", "ESO", 15);
 
   function Cursos(id_1, id_2, id_3, id_4, id_5, id_6, id_7, id_8, id_9, id_10) {
     this.id_1 = id_1;
@@ -43,3 +43,6 @@ function Luis(nombre, apellido, email, edad, contraseña, telefono, DNI, direcci
   }
 
   var Cursos = new Cursos(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+  const array = [Luis, Asignaturas, Notas, Cursos];
+  console.log(array);
