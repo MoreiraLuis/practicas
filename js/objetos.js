@@ -12,7 +12,7 @@ function alumno(nombre, apellido, email, edad, contraseña, telefono, DNI, direc
   
   var Luis = new alumno("Luis", "Moreira", "luismoreira@ejemplo.es", 30, 1234, 622052509, 04725525, "Av. Dr. Ángel Pascual Megías", 03015);
   var Jesus = new alumno("Jesús", "Alonso", "jesusalonso@ejemplo.es", 27, 1234, 611215496, 24869471, "Av. Dr. Rico Pérez", 03014);
-  var Maria = new alumno("María", "Rodríguez", "mariarodriguez@ejemplo.es", 24, 1234, 620304050, 04896214, "Av. Rambla", 03010);
+  var Maria = new alumno("María", "Rodríguez", "mariarodriguez@ejemplo.es", 24, 1234, 620304050, 04757732, "Av. Rambla", 03010);
 
 
   function Asignaturas(Nombre, id_profesor1, id_profesor2) {
@@ -58,4 +58,4 @@ function alumno(nombre, apellido, email, edad, contraseña, telefono, DNI, direc
   //array para mostrar datos de Maria
   const datosDeMaria = [Maria, MariaAsignaturas, MariaNotas, MariaCursos];
   //array para mostrar datos de Jesus
-  const datosDeJesus = [Luis, JesusAsignaturas, JesusNotas, JesusCursos];
+  const datosDeJesus = [Jesus, JesusAsignaturas, JesusNotas, JesusCursos];
