@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2023 a las 14:06:57
+-- Tiempo de generación: 09-05-2023 a las 14:12:51
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -86,7 +86,7 @@ INSERT INTO `cursos` (`ID`, `Nombre`, `id_1`, `id_2`, `id_3`, `id_4`, `id_5`, `i
 
 CREATE TABLE `notas` (
   `id` int(11) NOT NULL,
-  `Username` text NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   `id_asignatura` int(11) NOT NULL,
   `id_curso` int(11) NOT NULL,
   `nota` float NOT NULL
@@ -96,13 +96,13 @@ CREATE TABLE `notas` (
 -- Volcado de datos para la tabla `notas`
 --
 
-INSERT INTO `notas` (`id`, `Username`, `id_asignatura`, `id_curso`, `nota`) VALUES
-(1, 'luis', 1, 1, 16),
-(2, 'luis', 2, 1, 11),
-(3, 'jesusa', 1, 1, 15),
-(4, 'jesusa', 2, 1, 14),
-(5, 'marodriguez', 1, 1, 19),
-(6, 'marodriguez', 2, 1, 20);
+INSERT INTO `notas` (`id`, `id_usuario`, `id_asignatura`, `id_curso`, `nota`) VALUES
+(1, 1, 1, 1, 16),
+(2, 1, 2, 1, 11),
+(3, 2, 1, 1, 15),
+(4, 2, 2, 1, 14),
+(5, 3, 1, 1, 19),
+(6, 3, 2, 1, 20);
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`ID`, `DNI`, `Nombres`, `Apellidos`, `Username`, `Password`, `Foto`, `Direccion`, `Telefono`, `Tipo_de_usuario`, `Activo`) VALUES
 (1, '04725525', 'Luis Manuel', 'Moreira Esteban', 'luis', '123456789', 'foto.jpg', 'Av. Doctor Ángel Pascual Megías', 622052509, 0, 0),
 (2, '24869471', 'Jesús', 'Alonso', 'jesusa', '123456789', 'foto.jpg', 'Av. Doctor Rico Pérez', 611215496, 0, 0),
-(3, '12324745', 'María', 'Rodríguez', 'marodriguez', '123456789', 'foto.jpg', 'Av. Rambla', 699213567, 0, 0);
+(3, '12324745', 'María', 'Rodríguez', 'marodriguez', '123456789', 'foto.jpg', 'Av. Rambla', 699213567, 0, 0),
+(4, '123456789', 'Cristiano', 'Ronaldo', 'CR7', '123456', 'foto.jpg', 'Isla de Madeira', 0, 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -187,7 +188,7 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
