@@ -37,6 +37,7 @@ Connection conexion = null;
 		System.out.println("* 3. Insertar nuevo alumno");
 		System.out.println("* 4. Borrar alumno");
 		System.out.println("* 5. Modificar alumno");
+		System.out.println("* 6. Editar alumno [NUEVO] [EN PRUEBAS]");
 		System.out.println("--------------------------");
 	}
 	
@@ -174,7 +175,27 @@ Connection conexion = null;
 		}
 	}
 		
-		public static void main(String[] args) {
+	static void editarAlumno(Connection conexion, Scanner scanner) throws SQLException {
+        
+		System.out.println("Ingrese el id del alumno:");
+        int ID = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Ingrese el nuevo telefono del alumno:");
+        String telefono = scanner.nextLine();
+        System.out.println("Ingrese la nueva direccion del alumno:");
+        String direccion = scanner.nextLine();
+        Statement instruccion = conexion.createStatement();
+        String consulta = "UPDATE usuarios SET Telefono = '" + telefono + "', Direccion = '" + direccion + "' WHERE id = " + ID;
+        int filasAfectadas = instruccion.executeUpdate(consulta);
+        if (filasAfectadas == 1) {
+            System.out.println("Datos del alumno con id " + ID + " actualizados correctamente");
+        } else {
+            System.out.println("No se pudo actualizar el alumno con ID " + ID);
+        }
+        instruccion.close();
+    }
+	
+		public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
 			Scanner keyboard = new Scanner(System.in);
 			int numero=0;
@@ -204,7 +225,9 @@ Connection conexion = null;
 			    case 5:
 			    	instituto2.modificarAlumno();
 			    break;
-			    
+			    case 6:
+					instituto2.editarAlumno(null, keyboard);
+			    break;
 			    default:		    	
 			  }			
 			}while ((numero>=1)&&(numero>=2));
