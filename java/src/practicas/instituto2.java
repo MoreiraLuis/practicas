@@ -11,10 +11,33 @@ import java.util.Scanner;
 
 public class instituto2 {
 
+	static void consultarConexion() {
+Connection conexion = null;
+		
+		try {
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/instituto", "root", "");
+			// muestra información del tipo de sistema de base de datos (MySQL)
+			System.out.println("Base de datos: " +
+			conexion.getMetaData().getDatabaseProductName());
+		
+			System.out.println("Versión: " + conexion.getMetaData().getDatabaseProductVersion());
+			// muestra información del diver MySQL (MySQL Connector/J)
+			System.out.println("Driver: " + conexion.getMetaData().getDriverName());
+			// muestra información de la versión del driver MySQL (mysql-connector-java-8.0.18)
+			System.out.println("Versión del driver: " + conexion.getMetaData().getDriverVersion());
+			} catch (SQLException e) {
+			e.printStackTrace();
+			}
+	}
+	
 	static void mostrarMenu() {
-		System.out.println("MENU PRINCIPAL");
-		System.out.println("* 1. Mostrar notas de los alumnos");
-		System.out.println("* 2. Insertar nuevo alumno");
+		System.out.println("----- MENU PRINCIPAL -----");
+		System.out.println("* 1. Consultar estado de la conexion");
+		System.out.println("* 2. Mostrar notas de los alumnos");
+		System.out.println("* 3. Insertar nuevo alumno");
+		System.out.println("* 4. Borrar alumno");
+		System.out.println("* 5. Modificar alumno");
+		System.out.println("--------------------------");
 	}
 	
 	//método para consultar las notas de los alumnos
@@ -66,9 +89,6 @@ public class instituto2 {
 				 e.printStackTrace();
 				 }
 		 }
-		
-		
-		
 	}
 	
 	//método para insertar nuevo alumno
@@ -108,6 +128,52 @@ public class instituto2 {
 			System.out.println("PROGRAMA FINALIZADO");
 		}
 	
+	static void borrarAlumno() {
+		Connection conexion = null;
+ 
+		String usuario="root";
+		String pass="";
+		String baseDeDatos="jdbc:mysql://localhost:3306/instituto";
+		String query = "DELETE FROM usuarios WHERE ID=33";
+ 
+		try{
+			conexion = DriverManager.getConnection(baseDeDatos, usuario, pass);
+			conexion.setAutoCommit(false);
+ 
+			PreparedStatement ps1 = conexion.prepareStatement(query);
+			
+			ps1.execute();
+			conexion.commit();
+			
+		     System.out.println("Borrado correctamente");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	static void modificarAlumno() {
+		Connection conexion = null;
+ 
+		String usuario="root";
+		String pass="";
+		String baseDeDatos="jdbc:mysql://localhost:3306/instituto";
+		String query = "UPDATE usuarios SET Username = 'luismanuel' WHERE ID=1;";
+ 
+		try{
+			conexion = DriverManager.getConnection(baseDeDatos, usuario, pass);
+			conexion.setAutoCommit(false);
+			
+			PreparedStatement ps1 = conexion.prepareStatement(query);
+ 
+			ps1.executeUpdate();
+			conexion.commit();
+			
+		     System.out.println("Datos actualizados correctamente...");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+		
 		public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			Scanner keyboard = new Scanner(System.in);
@@ -123,13 +189,22 @@ public class instituto2 {
 					
 				}
 				switch (numero) { 
-			    case 1:
+				case 1:
+					instituto2.consultarConexion();
+				break;
+				case 2:
 			    	instituto2.consultarNotas();
 			     break;
-			    case 2:
+			    case 3:
 			    	instituto2.insertarAlumno();	    	
 			     break;
-
+			    case 4:
+			    	instituto2.borrarAlumno();
+			    break;
+			    case 5:
+			    	instituto2.modificarAlumno();
+			    break;
+			    
 			    default:		    	
 			  }			
 			}while ((numero>=1)&&(numero>=2));
